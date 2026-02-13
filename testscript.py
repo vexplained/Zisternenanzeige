@@ -5,12 +5,14 @@ from typing import List
 VOLTAGE_SUPPLY = 20
 SENSORS = [16, 21]
 
+
 def setup():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(VOLTAGE_SUPPLY, GPIO.OUT)
     GPIO.output(VOLTAGE_SUPPLY, GPIO.LOW)
     for sensor in SENSORS:
         GPIO.setup(sensor, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
 
 def read_sensor_state() -> List[bool]:
     # create supply voltage
@@ -24,8 +26,9 @@ def read_sensor_state() -> List[bool]:
     GPIO.output(VOLTAGE_SUPPLY, GPIO.LOW)
     return readings
 
+
 if __name__ == "__main__":
     setup()
     print(read_sensor_state())
-    
+
     GPIO.cleanup()
