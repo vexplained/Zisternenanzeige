@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{title}} | Zisternen-Ampel</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+	<ul class="navbar">
+		<li><a href="/">Füllstand</a></li>
+		<li><a href="/history">Historie</a></li>
+		<li style="float: right"><a href="/settings">Einstellungen</a></li>
+	</ul>
+	<div class="content">
+		{% block content %}{% endblock content %}
+	</div>
+</body>
+
+</html>

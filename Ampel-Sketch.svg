@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128.66772mm"
+   height="280mm"
+   viewBox="0 0 128.66772 280"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="Ampel-Sketch.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.80844905"
+     inkscape:cx="309.85255"
+     inkscape:cy="714.33073"
+     inkscape:window-width="2880"
+     inkscape:window-height="1514"
+     inkscape:window-x="5749"
+     inkscape:window-y="1600"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true" />
+  <defs
+     id="defs1">
+    <filter
+       inkscape:label="Refractive Glass"
+       inkscape:menu-tooltip="Double reflection through glass with some refraction"
+       inkscape:menu="Non-Realistic 3D Shaders"
+       height="1.096"
+       y="-0.048"
+       width="1.6857143"
+       x="-0.34285714"
+       style="color-interpolation-filters:sRGB"
+       id="filter124">
+      <feGaussianBlur
+         stdDeviation="5"
+         result="result8"
+         in="SourceGraphic"
+         id="feGaussianBlur118" />
+      <feComposite
+         in="result8"
+         in2="result8"
+         operator="xor"
+         result="result18"
+         id="feComposite118" />
+      <feComposite
+         in="result8"
+         k1="1"
+         k2="0.5"
+         operator="arithmetic"
+         result="result16"
+         in2="result18"
+         id="feComposite119" />
+      <feComposite
+         in2="result8"
+         result="result6"
+         operator="atop"
+         in="result16"
+         id="feComposite120" />
+      <feOffset
+         result="result17"
+         in="result6"
+         id="feOffset120" />
+      <feDisplacementMap
+         in2="result16"
+         in="result17"
+         xChannelSelector="A"
+         yChannelSelector="A"
+         scale="100"
+         result="result4"
+         id="feDisplacementMap120" />
+      <feComposite
+         in2="result4"
+         result="result2"
+         operator="arithmetic"
+         in="result17"
+         k3="1"
+         id="feComposite121" />
+      <feComposite
+         in2="result17"
+         result="fbSourceGraphic"
+         in="result2"
+         operator="out"
+         id="feComposite122" />
+      <feComposite
+         in="fbSourceGraphic"
+         in2="fbSourceGraphic"
+         operator="over"
+         result="result14"
+         id="feComposite123" />
+      <feComposite
+         result="result15"
+         in2="SourceGraphic"
+         operator="in"
+         in="result14"
+         id="feComposite124" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter473"
+       x="-0.20471291"
+       y="-0.094071432"
+       width="1.3744521"
+       height="1.1720714">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.247059"
+         flood-color="rgb(0,0,0)"
+         id="feFlood472" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="9.100000"
+         id="feGaussianBlur472" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="-4.500000"
+         dy="-4.500000"
+         id="feOffset472"
+         preserveAlpha="false" />
+      <feComposite
+         result="comp1"
+         operator="out"
+         in="flood"
+         in2="offset"
+         id="feComposite472" />
+      <feComposite
+         result="comp2"
+         operator="in"
+         in="comp1"
+         in2="SourceGraphic"
+         id="feComposite473" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1">
+      <rect
+         style="fill:#ffffff;stroke-width:0.533744;paint-order:markers fill stroke"
+         id="rect2"
+         width="35"
+         height="250"
+         x="60.666138"
+         y="25"
+         rx="17.5"
+         inkscape:label="Schauglass-Maske"
+         ry="17.5" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2">
+      <rect
+         style="fill:#ffffff;stroke-width:0.533744;paint-order:markers fill stroke"
+         id="rect3"
+         width="35"
+         height="250"
+         x="60.666138"
+         y="25"
+         rx="17.5"
+         inkscape:label="Schauglass-Maske"
+         ry="17.5" />
+    </clipPath>
+    <filter
+       inkscape:label="Refractive Glass"
+       inkscape:menu-tooltip="Double reflection through glass with some refraction"
+       inkscape:menu="Non-Realistic 3D Shaders"
+       height="1.096"
+       y="-0.048"
+       width="1.6857143"
+       x="-0.34285714"
+       style="color-interpolation-filters:sRGB"
+       id="filter124-7">
+      <feGaussianBlur
+         stdDeviation="5"
+         result="result8"
+         in="SourceGraphic"
+         id="feGaussianBlur118-6" />
+      <feComposite
+         in="result8"
+         in2="result8"
+         operator="xor"
+         result="result18"
+         id="feComposite118-1" />
+      <feComposite
+         in="result8"
+         k1="1"
+         k2="0.5"
+         operator="arithmetic"
+         result="result16"
+         in2="result18"
+         id="feComposite119-8"
+         k3="0"
+         k4="0" />
+      <feComposite
+         in2="result8"
+         result="result6"
+         operator="atop"
+         in="result16"
+         id="feComposite120-9" />
+      <feOffset
+         result="result17"
+         in="result6"
+         id="feOffset120-2" />
+      <feDisplacementMap
+         in2="result16"
+         in="result17"
+         xChannelSelector="A"
+         yChannelSelector="A"
+         scale="100"
+         result="result4"
+         id="feDisplacementMap120-7" />
+      <feComposite
+         in2="result4"
+         result="result2"
+         operator="arithmetic"
+         in="result17"
+         k3="1"
+         id="feComposite121-9"
+         k1="0"
+         k2="0"
+         k4="0" />
+      <feComposite
+         in2="result17"
+         result="fbSourceGraphic"
+         in="result2"
+         operator="out"
+         id="feComposite122-5" />
+      <feComposite
+         in="fbSourceGraphic"
+         in2="fbSourceGraphic"
+         operator="over"
+         result="result14"
+         id="feComposite123-4" />
+      <feComposite
+         result="result15"
+         in2="SourceGraphic"
+         operator="in"
+         in="result14"
+         id="feComposite124-3" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2-1">
+      <rect
+         style="fill:#ffffff;stroke-width:0.533744;paint-order:markers fill stroke"
+         id="rect3-2"
+         width="35"
+         height="250"
+         x="60.666138"
+         y="25"
+         rx="17.5"
+         inkscape:label="Schauglass-Maske"
+         ry="17.5" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1-3">
+      <rect
+         style="fill:#ffffff;stroke-width:0.533744;paint-order:markers fill stroke"
+         id="rect2-3"
+         width="35"
+         height="250"
+         x="60.666138"
+         y="25"
+         rx="17.5"
+         inkscape:label="Schauglass-Maske"
+         ry="17.5" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter473-4"
+       x="-0.20471291"
+       y="-0.094071432"
+       width="1.3744521"
+       height="1.1720714">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.247059"
+         flood-color="rgb(0,0,0)"
+         id="feFlood472-1" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="9.100000"
+         id="feGaussianBlur472-1" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="-4.500000"
+         dy="-4.500000"
+         id="feOffset472-3"
+         preserveAlpha="false" />
+      <feComposite
+         result="comp1"
+         operator="out"
+         in="flood"
+         in2="offset"
+         id="feComposite472-8" />
+      <feComposite
+         result="comp2"
+         operator="in"
+         in="comp1"
+         in2="SourceGraphic"
+         id="feComposite473-7" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-40.666138,-10)">
+    <rect
+       style="display:inline;fill:#999999;stroke-width:0.60812;paint-order:markers fill stroke"
+       id="bg"
+       width="128.668"
+       height="280"
+       x="40.665859"
+       y="10"
+       rx="16"
+       ry="16" />
+    <rect
+       style="display:inline;fill:#999999;stroke-width:0.60812;paint-order:markers fill stroke;filter:url(#filter473-4)"
+       id="bgshadow"
+       width="128.668"
+       height="280"
+       x="40.665859"
+       y="10"
+       rx="16"
+       ry="16"
+       inkscape:label="bg shadow" />
+    <rect
+       style="display:inline;fill:#0c1016;fill-opacity:1;stroke-width:0.533743;paint-order:markers fill stroke"
+       id="gaugeglass-bg"
+       width="35"
+       height="250"
+       x="60.665855"
+       y="25.000004"
+       rx="17.5"
+       inkscape:label="Schauglass-BG"
+       ry="17.5" />
+    <g
+       id="g_lampsoff"
+       inkscape:label="Anzeigen-Lichter (aus)"
+       mask="none"
+       style="display:inline"
+       clip-path="url(#clipPath1-3)"
+       transform="translate(-2.7884668e-4)">
+      <rect
+         style="display:inline;fill:#39170e;fill-opacity:1;stroke-width:0.451004;paint-order:markers fill stroke"
+         id="lamp1off"
+         width="35"
+         height="10"
+         x="60.666138"
+         y="265"
+         rx="5"
+         ry="5"
+         inkscape:label="Lampe 1 aus" />
+      <rect
+         style="display:inline;fill:#301701;fill-opacity:1;stroke-width:0.974902;paint-order:markers fill stroke"
+         id="lamp2off"
+         width="35"
+         height="37"
+         x="60.666138"
+         y="225"
+         rx="4"
+         ry="4"
+         inkscape:label="Lampe 2 aus" />
+      <rect
+         style="display:inline;fill:#3e2b00;fill-opacity:1;stroke-width:1.34572;paint-order:markers fill stroke"
+         id="lamp3off"
+         width="35"
+         height="70.499992"
+         x="60.666138"
+         y="151.5"
+         rx="4"
+         ry="4"
+         inkscape:label="Lampe 3 aus" />
+      <rect
+         style="display:inline;fill:#182e3d;fill-opacity:1;stroke-width:1.37736;paint-order:markers fill stroke"
+         id="lamp4off"
+         width="35"
+         height="103.00001"
+         x="60.666138"
+         y="45.5"
+         rx="4"
+         ry="4"
+         inkscape:label="Lampe 4 aus" />
+      <rect
+         style="display:inline;fill:#182e3d;fill-opacity:1;stroke-width:0.451004;paint-order:markers fill stroke"
+         id="lamp5off"
+         width="35"
+         height="17.5"
+         x="60.666138"
+         y="25"
+         rx="5"
+         ry="5"
+         inkscape:label="Lampe 5 aus" />
+    </g>
+    <g
+       id="g_lampson"
+       inkscape:label="Anzeigen-Lichter (an)"
+       mask="none"
+       style="display:inline"
+       clip-path="url(#clipPath2-1)"
+       transform="translate(-2.7884668e-4)">
+      <rect
+         style="display:inline;fill:#ed2e03;fill-opacity:1;stroke-width:0.451004;paint-order:markers fill stroke"
+         id="lamp1on"
+         width="35"
+         height="10"
+         x="60.666138"
+         y="265"
+         rx="5"
+         ry="5"
+         inkscape:label="Lampe 1 an" />
+      <rect
+         style="display:inline;fill:#f97d00;fill-opacity:1;stroke-width:0.974902;paint-order:markers fill stroke"
+         id="lamp2on"
+         width="35"
+         height="37"
+         x="60.666138"
+         y="225"
+         rx="4"
+         ry="4"
+         inkscape:label="Lampe 2 an" />
+      <rect
+         style="display:inline;fill:#edb603;fill-opacity:1;stroke-width:1.34572;paint-order:markers fill stroke"
+         id="lamp3on"
+         width="35"
+         height="70.499992"
+         x="60.666138"
+         y="151.5"
+         rx="4"
+         ry="4"
+         inkscape:label="Lampe 3 an" />
+      <rect
+         style="display:inline;fill:#009ffa;stroke-width:1.37736;paint-order:markers fill stroke"
+         id="lamp4on"
+         width="35"
+         height="103.00001"
+         x="60.666138"
+         y="45.5"
+         rx="4"
+         ry="4"
+         inkscape:label="Lampe 4 an" />
+      <rect
+         style="display:inline;fill:#009ffa;stroke-width:0.451004;paint-order:markers fill stroke"
+         id="lamp5on"
+         width="35"
+         height="17.5"
+         x="60.666138"
+         y="25"
+         rx="5"
+         ry="5"
+         inkscape:label="Lampe 5 an" />
+    </g>
+    <rect
+       style="display:inline;fill:#ececec;stroke-width:0.533743;paint-order:markers fill stroke;filter:url(#filter124-7)"
+       id="gaugeglass"
+       width="35"
+       height="250"
+       x="60.665855"
+       y="25.000004"
+       rx="17.5"
+       inkscape:label="Schauglass"
+       ry="17.5" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87777px;font-family:'Bodoni MT';-inkscape-font-specification:'Bodoni MT';writing-mode:lr-tb;direction:ltr;fill:#131e2b;stroke-width:0.538001;paint-order:markers fill stroke"
+       x="107.80923"
+       y="246.66397"
+       id="text-200"
+       inkscape:label="text-200"><tspan
+         sodipodi:role="line"
+         id="tspan478"
+         style="fill:#131e2b;stroke-width:0.538"
+         x="107.80923"
+         y="246.66397">min. 200 L</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87777px;font-family:'Bodoni MT';-inkscape-font-specification:'Bodoni MT';writing-mode:lr-tb;direction:ltr;fill:#131e2b;stroke-width:0.538001;paint-order:markers fill stroke"
+       x="107.80923"
+       y="189.91397"
+       id="text-1200"
+       inkscape:label="text-1200"><tspan
+         sodipodi:role="line"
+         id="tspan477"
+         style="fill:#131e2b;stroke-width:0.538"
+         x="107.80923"
+         y="189.91397">min. 1200 L</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';writing-mode:lr-tb;direction:ltr;fill:#131e2b;stroke-width:0.538001;paint-order:markers fill stroke"
+       x="107.80923"
+       y="100.20016"
+       id="text-2500"
+       inkscape:label="text-2500"><tspan
+         sodipodi:role="line"
+         id="tspan475"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:'Bodoni MT';-inkscape-font-specification:'Bodoni MT';fill:#131e2b;stroke-width:0.538"
+         x="107.80923"
+         y="100.20016">min. 2500 L</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87777px;font-family:'Bodoni MT';-inkscape-font-specification:'Bodoni MT';writing-mode:lr-tb;direction:ltr;fill:#131e2b;stroke-width:0.538001;paint-order:markers fill stroke"
+       x="107.66454"
+       y="36.950146"
+       id="text-5000"
+       inkscape:label="text-5000"><tspan
+         sodipodi:role="line"
+         id="tspan476"
+         style="fill:#131e2b;stroke-width:0.538"
+         x="107.66454"
+         y="36.950146">5000 L</tspan></text>
+    <rect
+       style="display:none;opacity:0.5;fill:#ff00ff;fill-opacity:1;stroke-width:1.20419;paint-order:markers fill stroke"
+       id="text-spacer"
+       width="12.5"
+       height="255.98903"
+       x="95.666138"
+       y="25"
+       inkscape:label="text-spacer" />
+  </g>
+</svg>

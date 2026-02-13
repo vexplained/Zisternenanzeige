@@ -1,0 +1,3 @@
+- Text zu Pfad
+- Schauglas als Bitmap gerendert (Alt+B), da falsche Darstellung in Firefox
+- Speichern unter / optimiertes SVG; Koordinaten: 8 signifikante Stellen
