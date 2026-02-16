@@ -46,35 +46,35 @@
 
 	{% if not lamp5 %}
 	<style>
-		#lamp5on {
+		#lamp4on {
 			visibility: hidden;
 		}
 	</style>
 	{% endif %}
 	{% if not lamp4 %}
 	<style>
-		#lamp4on {
+		#lamp3on {
 			visibility: hidden;
 		}
 	</style>
 	{% endif %}
 	{% if not lamp3 %}
 	<style>
-		#lamp3on {
+		#lamp2on {
 			visibility: hidden;
 		}
 	</style>
 	{% endif %}
 	{% if not lamp2 %}
 	<style>
-		#lamp2on {
+		#lamp1on {
 			visibility: hidden;
 		}
 	</style>
 	{% endif %}
 	{% if lamp1blinking %}
 	<style>
-		#lamp1on {
+		#lamp0on {
 			animation-duration: 2s;
 			animation-timing-function: linear;
 			animation-iteration-count: infinite;
@@ -128,7 +128,7 @@
 			if (response.status == 200)
 			{
 				container = document.getElementById("display-container");
-				document.getElementById("lamp2on").setAttribute("style", "visibility: hidden;");
+				document.getElementById("lamp1on").setAttribute("style", "visibility: hidden;");
 			}
 		} catch (err)
 		{

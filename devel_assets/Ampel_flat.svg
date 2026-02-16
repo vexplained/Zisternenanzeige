@@ -31,11 +31,11 @@
 		</g>
 		<g id="g_lampson" transform="translate(-2.7884668e-4)" clip-path="url(#clipPath2-1)">
 			<g>
-				<rect id="lamp1on" x="60.666138" y="265" width="35" height="10" rx="5" ry="5" fill="#ed2e03" stroke-width=".451004" style="paint-order:markers fill stroke"/>
-				<rect id="lamp2on" x="60.666138" y="225" width="35" height="37" rx="4" ry="4" fill="#f97d00" stroke-width=".974902" style="paint-order:markers fill stroke"/>
-				<rect id="lamp3on" x="60.666138" y="151.5" width="35" height="70.499992" rx="4" ry="4" fill="#edb603" stroke-width="1.34572" style="paint-order:markers fill stroke"/>
-				<rect id="lamp4on" x="60.666138" y="45.5" width="35" height="103.00001" rx="4" ry="4" fill="#009ffa" stroke-width="1.37736" style="paint-order:markers fill stroke"/>
-				<rect id="lamp5on" x="60.666138" y="25" width="35" height="17.5" rx="5" ry="5" fill="#009ffa" stroke-width=".451004" style="paint-order:markers fill stroke"/>
+				<rect id="lamp0on" x="60.666138" y="265" width="35" height="10" rx="5" ry="5" fill="#ed2e03" stroke-width=".451004" style="paint-order:markers fill stroke"/>
+				<rect id="lamp1on" x="60.666138" y="225" width="35" height="37" rx="4" ry="4" fill="#f97d00" stroke-width=".974902" style="paint-order:markers fill stroke"/>
+				<rect id="lamp2on" x="60.666138" y="151.5" width="35" height="70.499992" rx="4" ry="4" fill="#edb603" stroke-width="1.34572" style="paint-order:markers fill stroke"/>
+				<rect id="lamp3on" x="60.666138" y="45.5" width="35" height="103.00001" rx="4" ry="4" fill="#009ffa" stroke-width="1.37736" style="paint-order:markers fill stroke"/>
+				<rect id="lamp4on" x="60.666138" y="25" width="35" height="17.5" rx="5" ry="5" fill="#009ffa" stroke-width=".451004" style="paint-order:markers fill stroke"/>
 
 			</g>
 		</g>

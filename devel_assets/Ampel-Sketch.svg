@@ -422,7 +422,7 @@
        transform="translate(-2.7884668e-4)">
       <rect
          style="display:inline;fill:#ed2e03;fill-opacity:1;stroke-width:0.451004;paint-order:markers fill stroke"
-         id="lamp1on"
+         id="lamp0on"
          width="35"
          height="10"
          x="60.666138"
@@ -432,7 +432,7 @@
          inkscape:label="Lampe 1 an" />
       <rect
          style="display:inline;fill:#f97d00;fill-opacity:1;stroke-width:0.974902;paint-order:markers fill stroke"
-         id="lamp2on"
+         id="lamp1on"
          width="35"
          height="37"
          x="60.666138"
@@ -442,7 +442,7 @@
          inkscape:label="Lampe 2 an" />
       <rect
          style="display:inline;fill:#edb603;fill-opacity:1;stroke-width:1.34572;paint-order:markers fill stroke"
-         id="lamp3on"
+         id="lamp2on"
          width="35"
          height="70.499992"
          x="60.666138"
@@ -452,7 +452,7 @@
          inkscape:label="Lampe 3 an" />
       <rect
          style="display:inline;fill:#009ffa;stroke-width:1.37736;paint-order:markers fill stroke"
-         id="lamp4on"
+         id="lamp3on"
          width="35"
          height="103.00001"
          x="60.666138"
@@ -462,7 +462,7 @@
          inkscape:label="Lampe 4 an" />
       <rect
          style="display:inline;fill:#009ffa;stroke-width:0.451004;paint-order:markers fill stroke"
-         id="lamp5on"
+         id="lamp4on"
          width="35"
          height="17.5"
          x="60.666138"

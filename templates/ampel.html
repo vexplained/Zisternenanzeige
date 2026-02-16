@@ -104,8 +104,8 @@
 		updateMeter(true);
 	});
 
-	// lamp1on: blinking lamp ("LOW")
-	lampMap = ["lamp2on", "lamp3on", "lamp4on", "lamp5on"]
+	// lamp0on: blinking lamp ("LOW")
+	lampMap = ["lamp1on", "lamp2on", "lamp3on", "lamp4on"]
 
 	function updateMeter(forceRefresh)
 	{
@@ -132,9 +132,9 @@
 
 			// light 1 blinks when sensorVals == "0000"
 			if (sensorVals == "0000")
-				document.getElementById("lamp1on").classList.add("light-blinking");
+				document.getElementById("lamp0on").classList.add("light-blinking");
 			else
-				document.getElementById("lamp1on").classList.remove("light-blinking");
+				document.getElementById("lamp0on").classList.remove("light-blinking");
 
 			for (let i = 0; i < lampMap.length; i++)
 			{

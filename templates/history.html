@@ -52,7 +52,7 @@
 		content: "Letzte Aktualisierung: ";
 	}
 
-	.filllevel0 #lamp1on {
+	.filllevel0 #lamp0on {
 		visibility: visible;
 
 		animation-duration: 2s;
@@ -62,47 +62,47 @@
 		animation-name: blink;
 	}
 
+	.filllevel0 #lamp1on,
 	.filllevel0 #lamp2on,
 	.filllevel0 #lamp3on,
-	.filllevel0 #lamp4on,
-	.filllevel0 #lamp5on {
+	.filllevel0 #lamp4on {
 		visibility: hidden;
 	}
 
-	.filllevel1 #lamp1on,
-	.filllevel1 #lamp2on {
+	.filllevel1 #lamp0on,
+	.filllevel1 #lamp1on {
 		visibility: visible;
 	}
 
+	.filllevel1 #lamp2on,
 	.filllevel1 #lamp3on,
-	.filllevel1 #lamp4on,
-	.filllevel1 #lamp5on {
+	.filllevel1 #lamp4on {
 		visibility: hidden;
 	}
 
+	.filllevel2 #lamp0on,
 	.filllevel2 #lamp1on,
-	.filllevel2 #lamp2on,
-	.filllevel2 #lamp3on {
+	.filllevel2 #lamp2on {
 		visibility: visible;
 	}
 
-	.filllevel2 #lamp4on,
-	.filllevel2 #lamp5on {
+	.filllevel2 #lamp3on,
+	.filllevel2 #lamp4on {
 		visibility: hidden;
 	}
 
+	.filllevel3 #lamp0on,
 	.filllevel3 #lamp1on,
 	.filllevel3 #lamp2on,
-	.filllevel3 #lamp3on,
-	.filllevel3 #lamp4on {
+	.filllevel3 #lamp3on {
 		visibility: visible;
 	}
 
+	.filllevel4 #lamp0on,
 	.filllevel4 #lamp1on,
 	.filllevel4 #lamp2on,
 	.filllevel4 #lamp3on,
-	.filllevel4 #lamp4on,
-	.filllevel4 #lamp5on {
+	.filllevel4 #lamp4on {
 		visibility: visible;
 	}
 
@@ -144,8 +144,8 @@
 		updateMeter(true);
 	});
 
-	// lamp1on: blinking lamp ("LOW")
-	lampMap = ["lamp2on", "lamp3on", "lamp4on", "lamp5on"]
+	// lamp0on: blinking lamp ("LOW")
+	lampMap = ["lamp1on", "lamp2on", "lamp3on", "lamp4on"]
 
 	function updateMeter(forceRefresh)
 	{
@@ -172,9 +172,9 @@
 
 			// light 1 blinks when sensorVals == "0000"
 			if (sensorVals == "0000")
-				document.getElementById("lamp1on").classList.add("light-blinking");
+				document.getElementById("lamp0on").classList.add("light-blinking");
 			else
-				document.getElementById("lamp1on").classList.remove("light-blinking");
+				document.getElementById("lamp0on").classList.remove("light-blinking");
 
 			for (let i = 0; i < lampMap.length; i++)
 			{
