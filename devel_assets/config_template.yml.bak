@@ -1,0 +1,17 @@
+mail:
+  server_address: smtp.gmail.com
+  server_port: 465
+  server_user: ""
+  server_password: ""
+  receivers:
+    - levin.fober@gmail.com
+  subject: Alarm Zisternen-Füllstand
+  filllevel_threshold: 1 # Maximalanzahl an leuchtenden Lampen auf Webanzeige, ab der Mails versendet werden (inklusive; 0-5; Bsp.: 1 sendet für Füllstand < 200 L Mails). Deaktivieren: Wert >=5 eintragen.
+  body: "Zisternen-Füllstand hat Schwellwert erreicht: {Ist} <= {Schwellwert} (Ist\
+    \ <= Schwellwert)\n\nFüllstände sind:\n\t0: < 200 L\n\t1: 200 - 1200 L\n\t2: 1200\
+    \ - 2500 L\n\t3: 2500 - 5000 L\n\t4: 5000 L"
+  subject: Alarm Zisternen-Füllstand
+  reminder_interval: 86400 # Mindestdauer zwischen aufeinanderfolgenden Emails zum gleichen Füllstand.
+
+history_entries: 5
+max_cache_age = 3600 # in seconds

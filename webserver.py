@@ -32,14 +32,11 @@ def route_read():
         # render dummy
         return render_template("error_hw.html")
 
-    print(request.data)
-    print(request.json.get("refreshReadings"))
     if request.method == "POST" and request.json.get("refreshReadings") == "true":
         hw_bridge.read_sensors_and_cache()
 
-    readings = hw_bridge.get_readings()
     return {
-        "sensors": "".join(str(val) for val in readings),
+        "sensors": hw_bridge.get_readings_as_str(),
         "timeOfReading": hw_bridge.get_cache_time().strftime("%d.%m.%Y (%H:%M:%S)")
     }
 

@@ -17,12 +17,12 @@ class ZisterneHW:
         self.cached_time = datetime.fromtimestamp(0)
         self.max_cache_age = max_cache_age
 
-    def __setup(self):
+    def __setup__(self):
         GPIO.setmode(GPIO.BCM)
         for sensor in self.SENSORS:
             GPIO.setup(sensor, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-    def __read_sensor_state(self) -> List[int]:
+    def __read_sensor_state__(self) -> List[int]:
         readings = [0] * len(self.SENSORS)  # 0 or 1
         for i in range(len(self.SENSORS)):
             readings[i] = int(GPIO.input(self.SENSORS[i]))
@@ -35,8 +35,8 @@ class ZisterneHW:
             List[int]: List of sensor states
         """
         logging.info("Reading new sensor values.")
-        self.__setup()
-        readings = self.__read_sensor_state()
+        self.__setup__()
+        readings = self.__read_sensor_state__()
         GPIO.cleanup()
         self.cache = readings
         self.cached_time = datetime.now()
@@ -60,3 +60,12 @@ class ZisterneHW:
             self.read_sensors_and_cache()
         logging.debug("Sensors: {}".format(self.cache))
         return self.cache
+
+    def get_readings_as_str(self) -> str:
+        """Returns sensor readings in string format: Concatenates all sensor values, without separator:
+        `[1, 1, 0, 0] -> "1100"`
+        """
+        return "".join(str(val) for val in self.get_readings())
+
+    def get_filllevel(self) -> int:
+        return self.get_readings_as_str().find("0")
