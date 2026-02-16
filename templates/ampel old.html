@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+	#ampel-img {
+		min-height: 250px;
+		max-width: 350px;
+	}
+
+	.display-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.display-container>* {
+		margin: 10px;
+	}
+
+	.refresh-btn-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.refresh-btn-container button {
+		width: 100%;
+		max-width: 350px;
+		height: 50px;
+		border: 2px solid black;
+		background-color: white;
+		border-radius: 100px;
+		cursor: pointer;
+	}
+
+	.refresh-btn-container button:hover {
+		background-color: #c9f3ff;
+	}
+
+	.refresh-btn-container button:active {
+		background-color: #43baff;
+	}
+</style>
+<div class="display-container" id="display-container">
+
+	{% if not lamp5 %}
+	<style>
+		#lamp5on {
+			visibility: hidden;
+		}
+	</style>
+	{% endif %}
+	{% if not lamp4 %}
+	<style>
+		#lamp4on {
+			visibility: hidden;
+		}
+	</style>
+	{% endif %}
+	{% if not lamp3 %}
+	<style>
+		#lamp3on {
+			visibility: hidden;
+		}
+	</style>
+	{% endif %}
+	{% if not lamp2 %}
+	<style>
+		#lamp2on {
+			visibility: hidden;
+		}
+	</style>
+	{% endif %}
+	{% if lamp1blinking %}
+	<style>
+		#lamp1on {
+			animation-duration: 2s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			animation-name: blink;
+		}
+
+		@keyframes blink {
+			0% {
+				opacity: 100%;
+			}
+
+			5% {
+				opacity: 0%;
+			}
+
+			50% {
+				opacity: 0%;
+			}
+
+			55% {
+				opacity: 100%;
+			}
+		}
+	</style>
+	{% endif %}
+
+	{% include "ampel_inlinesvg.html" %}
+	<!-- <form class="refresh-btn-container" action="" method="post">
+		<button name="refresh" value="refresh">Erneut messen</button>
+	</form> -->
+	<div class="refresh-btn-container">
+		<button id="btn-refresh">Erneut messen</button>
+	</div>
+</div>
+
+<script>
+	// Using JS instead of plain HTML to prevent the site from reloading
+	const button = document.getElementById('btn-refresh');
+
+	button.addEventListener('click', async _ =>
+	{
+		try
+		{
+			const response = await fetch('/refresh', {
+				method: 'post',
+				body: {}
+			});
+			console.log('Completed!', response);
+
+			if (response.status == 200)
+			{
+				container = document.getElementById("display-container");
+				document.getElementById("lamp2on").setAttribute("style", "visibility: hidden;");
+			}
+		} catch (err)
+		{
+			console.error(`Error: ${err}`);
+		}
+	});
+</script>
+{% endblock content %}
