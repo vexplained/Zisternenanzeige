@@ -66,8 +66,9 @@ def update(hw_bridge: ZisterneHW, config: Config, storage: AppStorage):
 def run_measure_daemon(hw_bridge: ZisterneHW, config: Config, storage: AppStorage):
     # read sensors to set hw_bridge cache (otherwise ::update adds history entry every time the app is started)
     hw_bridge.read_sensors_and_cache()
-    # check every 10s if max cache age is exceeded (in case a refresh was manually initiated)
-    timer = RepeatTimer(1, update, args=(hw_bridge, config, storage))
+    # check every x seconds if max cache age is exceeded (in case a refresh was manually initiated)
+    timer = RepeatTimer(config.config.get(
+        "measure_daemon_interval"), update, args=(hw_bridge, config, storage))
     timer.start()
 
 
