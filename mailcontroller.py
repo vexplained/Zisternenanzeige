@@ -74,7 +74,7 @@ def format_mail_str(string: str, filllevel: int, threshold: int, config: Config)
     dict_level_translations = config.config.get(
         "mail").get("strings").get("level_translations")
     return string.format(Ist=filllevel, Schwellwert=threshold,
-                         level_translation=dict_level_translations.get(filllevel), URL=f"http://{get_ip()}:5000")
+                         level_translation=dict_level_translations.get(filllevel), URL=f"http://{get_ip()}")
 
 
 def get_ip():

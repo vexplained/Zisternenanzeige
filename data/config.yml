@@ -14,7 +14,7 @@ mail:
   strings:
     body: "Zisternen-Füllstand hat Schwellwert erreicht: {Ist} <= {Schwellwert} (Ist\
       \ <= Schwellwert)\n\nFüllstände sind:\n\t0: < 200 L\n\t1: 200 - 1200 L\n\t2:\
-      \ 1200 - 2500 L\n\t3: 2500 - 5000 L\n\t4: 5000 L\nEinsehbar unter {URL}"
+      \ 1200 - 2500 L\n\t3: 2500 - 5000 L\n\t4: 5000 L\nEinsehbar unter {URL}:8080"
     level_translations:
       0: < 200 L
       1: 200 - 1200 L

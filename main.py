@@ -39,7 +39,7 @@ def run_webserver(hw_bridge, config, storage, yaml_spec_file):
     app.config['APP_STORAGE'] = storage
     app.config['YAML_SPEC_FILE'] = yaml_spec_file
     # It isn't safe to use the reloader in a thread
-    app.run(host="0.0.0.0", debug=True, use_reloader=False)
+    app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=False)
 
 
 def update(hw_bridge: ZisterneHW, config: Config, storage: AppStorage):
