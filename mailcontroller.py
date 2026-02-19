@@ -5,6 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from email.header import Header
 from email.utils import formataddr
 import logging
+import socket
 
 from database import AppStorage, Config
 
@@ -73,4 +74,21 @@ def format_mail_str(string: str, filllevel: int, threshold: int, config: Config)
     dict_level_translations = config.config.get(
         "mail").get("strings").get("level_translations")
     return string.format(Ist=filllevel, Schwellwert=threshold,
-                         level_translation=dict_level_translations.get(filllevel))
+                         level_translation=dict_level_translations.get(filllevel), URL=f"http://{get_ip()}:5000")
+
+
+def get_ip():
+    """
+    Source: https://stackoverflow.com/a/28950776
+    """
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.settimeout(0)
+    try:
+        # doesn't even have to be reachable
+        s.connect(('10.254.254.254', 1))
+        IP = s.getsockname()[0]
+    except Exception:
+        IP = '127.0.0.1'
+    finally:
+        s.close()
+    return IP
