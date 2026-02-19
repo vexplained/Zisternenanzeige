@@ -44,6 +44,10 @@
     visibility: visible;
 }
 
+.filllevel3 #lamp4on {
+    visibility: hidden;
+}
+
 .filllevel4 #lamp0on,
 .filllevel4 #lamp1on,
 .filllevel4 #lamp2on,

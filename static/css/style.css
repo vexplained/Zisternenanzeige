@@ -88,17 +88,18 @@ ul.navbar a:active {
     flex-direction: column;
     align-items: center;
     justify-content: baseline;
-    height: 100vh;
     margin: 0;
-    padding: 0;
+    padding-left: 15px;
+	padding-right: 15px;
 	font-size: 14pt;
+	width: 100%;
 }
 
 .yamleditor-body h1 {
 	margin-bottom: 20px;
 }
 
-.yamleditor-body #editor {
+.yamleditor-body #yamlEditor {
     width: 100%;
     display: flex;
     justify-content: center;

@@ -28,19 +28,13 @@ function updateMeter(forceRefresh)
         throw new Error("Error: " + response.status);
     }).then((responseJSON) =>
     {
-        let filllevel = responseJSON["filllevel"];
+        let level = responseJSON["filllevel"];
+        let img = document.createElement("img");
+        img.src = `/static/img/ampel${level}.svg`;
+        document.getElementById("display-container").append(img);
         let timeOfReading = responseJSON["timeOfReading"];
         if (timeOfReading == undefined) timeOfReading = "---";
         document.getElementById("refresh-date").textContent = timeOfReading;
-
-        let classList = document.getElementById("ampel-img").classList;
-        classList.remove("filllevel0");
-        classList.remove("filllevel1");
-        classList.remove("filllevel2");
-        classList.remove("filllevel3");
-        classList.remove("filllevel4");
-
-        classList.add(`filllevel${filllevel}`)
 
     }).catch((error) =>
     {
