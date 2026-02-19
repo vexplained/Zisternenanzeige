@@ -14,7 +14,7 @@ mail:
   strings:
     body: "Zisternen-Füllstand hat Schwellwert erreicht: {Ist} <= {Schwellwert} (Ist\
       \ <= Schwellwert)\n\nFüllstände sind:\n\t0: < 200 L\n\t1: 200 - 1200 L\n\t2:\
-      \ 1200 - 2500 L\n\t3: 2500 - 5000 L\n\t4: 5000 L\nEinsehen unter {URL}"
+      \ 1200 - 2500 L\n\t3: 2500 - 5000 L\n\t4: 5000 L\nEinsehbar unter {URL}"
     level_translations:
       0: < 200 L
       1: 200 - 1200 L
@@ -22,5 +22,5 @@ mail:
       3: 2500 - 5000 L
       4: 5000 L
     subject: Alarm Zisternen-Füllstand ({level_translation})
-max_cache_age: 3
+max_cache_age: 3600
 measure_daemon_interval: 30
