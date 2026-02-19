@@ -28,8 +28,10 @@ function updateMeter(forceRefresh)
         throw new Error("Error: " + response.status);
     }).then((responseJSON) =>
     {
+	document.getElementById("img-ampel").remove();
         let level = responseJSON["filllevel"];
         let img = document.createElement("img");
+	img.id = "img-ampel";
         img.src = `/static/img/ampel${level}.svg`;
         document.getElementById("display-container").append(img);
         let timeOfReading = responseJSON["timeOfReading"];
