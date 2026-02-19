@@ -1,26 +1,5 @@
-date_format: '%d.%m.%Y, %H:%M:%S'
-history_length: 100
-mail:
-  filllevel_threshold: 3
-  recipients:
-  - levin.fober@gmail.com
-  reminder_interval: 604800
-  server:
-    address: smtp.gmail.com
-    password: ffdbibvqgxxfbqbe
-    port: 465
-    realname: Zisternen-Pi
-    user: printermailerlevin@gmail.com
-  strings:
-    body: "Zisternen-FÃ¼llstand hat Schwellwert erreicht: {Ist} <= {Schwellwert} (Ist\
-      \ <= Schwellwert)\n\nFÃ¼llstÃ¤nde sind:\n\t0: < 200 L\n\t1: 200 - 1200 L\n\t2:\
-      \ 1200 - 2500 L\n\t3: 2500 - 5000 L\n\t4: 5000 L\nEinsehbar unter {URL}"
-    level_translations:
-      0: < 200 L
-      1: 200 - 1200 L
-      2: 1200 - 2500 L
-      3: 2500 - 5000 L
-      4: 5000 L
-    subject: Alarm Zisternen-FÃ¼llstand ({level_translation})
-max_cache_age: 3600
-measure_daemon_interval: 30
+2_raw”Œvendor-data2.txt”Œvendordata_raw”Œvendor-data.txt”Œvendor2_cloud_config”Œvendor2-cloud-config.txt”Œvendor_cloud_config”Œvendor-cloud-config.txt”Œvendor_scripts”Œscripts/vendor”Œwarnings”hØŒhotplug.enabled”hÙŒ.skip-network”hÚuŒ
+datasource”NŒ_ci_pkl_version”KubŒ_cfg”}”(Œdefault_user”}”(Œname”Œpi”Œlock_passwd”ˆŒgecos”ŒRaspberry Pi OS”Œgroups”]”(Œadm”Œdialout”Œcdrom”Œaudio”Œusers”Œsudo”Œvideo”Œgames”Œplugdev”Œinput”Œgpio”Œspi”Œi2c”Œnetdev”Œrender”Œlpadmin”eŒsudo”]”ŒALL=(ALL) NOPASSWD:ALL”aŒshell”Œ	/bin/bash”uŒnetwork”}”(Œ	renderers”]”(Œnetplan”Œnetwork-manager”eŒ
+activators”]”(Œnetplan”Œnetwork-manager”euŒdisable_fallback_netcfg”ˆŒ
+ntp_client”Œsystemd-timesyncd”Œssh_svcname”Œssh”Œpaths”}”(hŸh h¡h¢h£h¤uuŒname”Œraspberry-pi-os”Œ
+network
