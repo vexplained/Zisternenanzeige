@@ -28,7 +28,8 @@ function updateMeter(forceRefresh)
         throw new Error("Error: " + response.status);
     }).then((responseJSON) =>
     {
-	document.getElementById("img-ampel").remove();
+	var oldElem = document.getElementById("img-ampel");
+	if(oldElem) oldElem.remove();
         let level = responseJSON["filllevel"];
         let img = document.createElement("img");
 	img.id = "img-ampel";
