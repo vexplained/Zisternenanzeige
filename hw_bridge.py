@@ -3,6 +3,8 @@ import RPi.GPIO as GPIO
 from typing import List
 import logging
 
+logger = logging.getLogger("HW Bridge")
+
 
 class ZisterneHW:
     def __init__(self, max_cache_age=3600) -> None:
@@ -34,7 +36,7 @@ class ZisterneHW:
         Returns:
             List[int]: List of sensor states
         """
-        logging.info("Reading new sensor values.")
+        logger.info("Reading new sensor values.")
         self.__setup__()
         readings = self.__read_sensor_state__()
         GPIO.cleanup()
@@ -54,11 +56,11 @@ class ZisterneHW:
         Returns:
             List[int]: List of sensor states
         """
-        logging.debug("Sensor readings requested. useCached={}, cacheAge={}s".format(
+        logger.debug("Sensor readings requested. useCached={}, cacheAge={}s".format(
             self.get_cache_age().total_seconds() < self.max_cache_age, self.get_cache_age().total_seconds()))
         if self.get_cache_age().total_seconds() > self.max_cache_age:
             self.read_sensors_and_cache()
-        logging.debug("Sensors: {}".format(self.cache))
+        logger.debug("Sensors: {}".format(self.cache))
         return self.cache
 
     def get_readings_as_str(self) -> str:
@@ -68,4 +70,5 @@ class ZisterneHW:
         return "".join(str(val) for val in self.get_readings())
 
     def get_filllevel(self) -> int:
-        return self.get_readings_as_str().find("0")
+        pos = self.get_readings_as_str().find("0")
+        return 4 if pos < 0 else pos

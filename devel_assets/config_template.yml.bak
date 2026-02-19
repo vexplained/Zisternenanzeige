@@ -15,3 +15,52 @@ mail:
 
 history_entries: 5
 max_cache_age = 3600 # in seconds
+
+
+
+#old version
+history_length: 5
+mail:
+  body: "Zisternen-Füllstand hat Schwellwert erreicht: {Ist} <= {Schwellwert} (Ist\
+    \ <= Schwellwert)\n\nFüllstände sind:\n\t0: < 200 L\n\t1: 200 - 1200 L\n\t2: 1200\
+    \ - 2500 L\n\t3: 2500 - 5000 L\n\t4: 5000 L"
+  filllevel_threshold: 3
+  recipients:
+  - levin.fober@gmail.com
+  reminder_interval: 86400
+  server_address: smtp.gmail.com
+  server_password: ffdbibvqgxxfbqbe
+  server_port: 465
+  server_user: printermailerlevin@gmail.com
+  subject: Alarm Zisternen-Füllstand ({Ist})
+max_cache_age: 5
+
+
+
+
+
+# new version
+history_length: 5
+mail:
+  server:
+    address: smtp.gmail.com
+    password: ffdbibvqgxxfbqbe
+    port: 465
+    user: printermailerlevin@gmail.com
+  strings:
+    body: "Zisternen-Füllstand hat Schwellwert erreicht: {Ist} <= {Schwellwert} (Ist\
+      \ <= Schwellwert)\n\nFüllstände sind:\n\t0: < 200 L\n\t1: 200 - 1200 L\n\t2: 1200\
+      \ - 2500 L\n\t3: 2500 - 5000 L\n\t4: 5000 L"
+    subject: Alarm Zisternen-Füllstand ({Ist} // {level_translation})
+    level_translations:
+      0: < 200 L
+      1: 200 - 1200 L
+      2: 1200 - 2500 L
+      3: 2500 - 5000 L
+      4: 5000 L
+  filllevel_threshold: 3
+  recipients:
+  - levin.fober@gmail.com
+  reminder_interval: 86400
+max_cache_age: 5
+

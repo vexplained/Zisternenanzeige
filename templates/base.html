@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
 	<meta charset="UTF-8">
@@ -11,9 +11,10 @@
 
 <body>
 	<ul class="navbar">
-		<li><a href="/">Füllstand</a></li>
-		<li><a href="/history">Historie</a></li>
-		<li style="float: right"><a href="/settings">Einstellungen</a></li>
+		<li><a href="/" {% if navbar_filllevel_selected %} class="active" {% endif %}>Füllstand</a></li>
+		<li><a href="/history" {% if navbar_history_selected %} class="active" {% endif %}>Historie</a></li>
+		<li style="float: right"><a href="/settings" {% if navbar_settings_selected %} class="active" {% endif
+				%}>Einstellungen</a></li>
 	</ul>
 	<div class="content">
 		{% block content %}{% endblock content %}

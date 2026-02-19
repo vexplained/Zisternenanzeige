@@ -1,198 +1,91 @@
 {% extends "base.html" %}
 {% block content %}
+<script src="{{ url_for('static', filename='js/script-history.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style-lamps.css') }}">
 <style>
-	#ampel-img {
-		min-height: 50px;
-		max-width: 100px;
+	.stats {
+		margin: auto 50px;
+	}
+
+	.ampel-img {
+		min-height: 200px;
+		max-width: 200px;
 	}
 
 	.display-container {
+		overflow-x: auto;
 		display: flex;
-		flex-direction: column;
+		/* auto-scroll to the right; need to reverse order of child elements */
+		flex-direction: row-reverse;
+		flex-wrap: nowrap;
 		align-items: center;
-		justify-content: center;
+		/* justify-content: center safe; */
+		text-align: center;
+		margin: 50px auto;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	.display-container::before,
+	.display-container::after {
+		/* align center if overflowing */
+		/* equivalent to justify-content: center safe; better browser support */
+		content: '';
+		flex: 1;
 	}
 
 	.display-container>* {
 		margin: 10px;
 	}
 
-	.refresh-btn-container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-	}
-
-	.refresh-btn-container button {
-		width: 100%;
-		max-width: 350px;
-		height: 50px;
-		border: 2px solid black;
-		background-color: white;
-		border-radius: 100px;
-		cursor: pointer;
-	}
-
-	.refresh-btn-container button:hover {
-		background-color: #c9f3ff;
-	}
-
-	.refresh-btn-container button:active {
-		background-color: #43baff;
-	}
-
-	#refresh-date {
+	.caption {
 		color: #2a2a2a;
-		font-weight: bold;
+		/* font-weight: bold; */
 		text-align: center;
 	}
 
-	#refresh-date::before {
-		content: "Letzte Aktualisierung: ";
+	.display-container div.history-entry {
+		margin: 0 20px;
+		display: inline-block;
 	}
 
-	.filllevel0 #lamp0on {
-		visibility: visible;
-
-		animation-duration: 2s;
-		animation-timing-function: linear;
-		animation-iteration-count: infinite;
-		animation-play-state: running;
-		animation-name: blink;
+	table,
+	tbody,
+	tfoot,
+	thead,
+	tr,
+	th,
+	td {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		font-size: 100%;
+		font-weight: normal;
+		vertical-align: baseline;
+		background: transparent;
+		text-align: left;
 	}
 
-	.filllevel0 #lamp1on,
-	.filllevel0 #lamp2on,
-	.filllevel0 #lamp3on,
-	.filllevel0 #lamp4on {
-		visibility: hidden;
-	}
-
-	.filllevel1 #lamp0on,
-	.filllevel1 #lamp1on {
-		visibility: visible;
-	}
-
-	.filllevel1 #lamp2on,
-	.filllevel1 #lamp3on,
-	.filllevel1 #lamp4on {
-		visibility: hidden;
-	}
-
-	.filllevel2 #lamp0on,
-	.filllevel2 #lamp1on,
-	.filllevel2 #lamp2on {
-		visibility: visible;
-	}
-
-	.filllevel2 #lamp3on,
-	.filllevel2 #lamp4on {
-		visibility: hidden;
-	}
-
-	.filllevel3 #lamp0on,
-	.filllevel3 #lamp1on,
-	.filllevel3 #lamp2on,
-	.filllevel3 #lamp3on {
-		visibility: visible;
-	}
-
-	.filllevel4 #lamp0on,
-	.filllevel4 #lamp1on,
-	.filllevel4 #lamp2on,
-	.filllevel4 #lamp3on,
-	.filllevel4 #lamp4on {
-		visibility: visible;
-	}
-
-	@keyframes blink {
-		0% {
-			opacity: 100%;
-		}
-
-		5% {
-			opacity: 0%;
-		}
-
-		50% {
-			opacity: 0%;
-		}
-
-		55% {
-			opacity: 100%;
-		}
+	th:first-child {
+		padding-right: 0.5rem;
 	}
 </style>
+<div class="stats">
+	<h2 id="history-title"></h2>
+	<table>
+		<tr>
+			<th>Minimum:</th>
+			<th id="min-field">asd</th>
+		</tr>
+		<tr>
+			<th>Maximum:</th>
+			<th id="max-field">asd</th>
+		</tr>
+	</table>
+</div>
 <div class="display-container" id="display-container">
-
-	{% include "ampel_inlinesvg.html" %}
-	<div class="refresh-btn-container">
-		<button id="btn-refresh">Erneut messen</button>
-	</div>
-	<span class="refresh-date-container">
-		<p id="refresh-date"></p>
-	</span>
 </div>
 
-<script>
-	// Using JS instead of plain HTML to prevent the site from reloading when POSTing
-	const button = document.getElementById('btn-refresh');
 
-	button.addEventListener('click', async _ =>
-	{
-		updateMeter(true);
-	});
-
-	// lamp0on: blinking lamp ("LOW")
-	lampMap = ["lamp1on", "lamp2on", "lamp3on", "lamp4on"]
-
-	function updateMeter(forceRefresh)
-	{
-		var headers = {
-			"Access-Control-Origin": "*",
-			"Content-Type": "application/json",
-		}
-
-		fetch('/read', {
-			method: 'post',
-			headers: headers,
-			body: JSON.stringify({ "refreshReadings": forceRefresh.toString() }),
-		}).then((response) =>
-		{
-			if (response.ok) return response.json();
-			throw new Error("Error: " + response.status);
-		}).then((responseJSON) =>
-		{
-			console.log(responseJSON["sensors"]);
-			let sensorVals = responseJSON["sensors"];
-			let timeOfReading = responseJSON["timeOfReading"];
-			if (timeOfReading == undefined) timeOfReading = "---";
-			document.getElementById("refresh-date").textContent = timeOfReading;
-
-			// light 1 blinks when sensorVals == "0000"
-			if (sensorVals == "0000")
-				document.getElementById("lamp0on").classList.add("light-blinking");
-			else
-				document.getElementById("lamp0on").classList.remove("light-blinking");
-
-			for (let i = 0; i < lampMap.length; i++)
-			{
-				let el = document.getElementById(lampMap[i]);
-
-				if (sensorVals.charAt(i) == "1")
-					el.classList.remove("light-off");
-				else
-					el.classList.add("light-off");
-			}
-
-		}).catch((error) =>
-		{
-			console.log(error);
-		});
-	}
-
-	// fetch current state after fully loading
-	window.onload = updateMeter(false);
-</script>
 {% endblock content %}

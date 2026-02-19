@@ -1,0 +1,71 @@
+.filllevel0 #lamp0on {
+    visibility: visible;
+
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-name: blink;
+}
+
+.filllevel0 #lamp1on,
+.filllevel0 #lamp2on,
+.filllevel0 #lamp3on,
+.filllevel0 #lamp4on {
+    visibility: hidden;
+}
+
+.filllevel1 #lamp0on,
+.filllevel1 #lamp1on {
+    visibility: visible;
+}
+
+.filllevel1 #lamp2on,
+.filllevel1 #lamp3on,
+.filllevel1 #lamp4on {
+    visibility: hidden;
+}
+
+.filllevel2 #lamp0on,
+.filllevel2 #lamp1on,
+.filllevel2 #lamp2on {
+    visibility: visible;
+}
+
+.filllevel2 #lamp3on,
+.filllevel2 #lamp4on {
+    visibility: hidden;
+}
+
+.filllevel3 #lamp0on,
+.filllevel3 #lamp1on,
+.filllevel3 #lamp2on,
+.filllevel3 #lamp3on {
+    visibility: visible;
+}
+
+.filllevel4 #lamp0on,
+.filllevel4 #lamp1on,
+.filllevel4 #lamp2on,
+.filllevel4 #lamp3on,
+.filllevel4 #lamp4on {
+    visibility: visible;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 100%;
+    }
+
+    10% {
+        opacity: 0%;
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    55% {
+        opacity: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Source (MIT license), modified: https://github.com/guerillamos/yaml-editor -->
+
+<div class="yamleditor-body">
+    <h1>YAML Editor</h1>
+    <textarea id="yamlEditor" rows="30" cols="100"></textarea>
+    <br>
+    <span class="button" id="saveButton">Speichern</span>
+    <div id="message"></div>
+    <script src="{{ url_for('static', filename='js/script-yamleditor.js') }}"></script>
+</div>
+
+</html>
+{% endblock content %}
