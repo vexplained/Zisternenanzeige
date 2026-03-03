@@ -36,7 +36,7 @@ function updateMeter(forceRefresh)
         img.src = `/static/img/ampel${level}.svg`;
         document.getElementById("display-container").append(img);
         let timeOfReading = responseJSON["timeOfReading"];
-        if (timeOfReading == undefined) timeOfReading = "---";
+        if (!timeOfReading) timeOfReading = "---";
         document.getElementById("refresh-date").textContent = timeOfReading;
 
     }).catch((error) =>

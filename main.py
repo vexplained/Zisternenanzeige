@@ -74,7 +74,7 @@ def run_measure_daemon(hw_bridge: ZisterneHW, config: Config, storage: AppStorag
 
 def main():
     logging.basicConfig(
-        level=logging.DEBUG, style="{", datefmt="%H:%M:%S", format="{asctime}.{msecs:03.0f} [{levelname:^10}] [{threadName} | {name}] {message}")
+        level=logging.INFO, style="{", datefmt="%Y-%m-%d %H:%M:%S", format="{asctime}.{msecs:03.0f} [{levelname:^10}] [{threadName} | {name}] {message}")
 
     with Config(CONFIG_FILE) as config:
         with AppStorage(DB_FILE, config) as storage:

@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 import RPi.GPIO as GPIO
 from typing import List
 import logging
+from time import sleep
 
 logger = logging.getLogger("HW Bridge")
 
@@ -23,11 +24,21 @@ class ZisterneHW:
         GPIO.setmode(GPIO.BCM)
         for sensor in self.SENSORS:
             GPIO.setup(sensor, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        sleep(0.2) # wait for pull up to settle; otherwise many false readings
+    
+    def __cleanup__(self):
+        GPIO.cleanup()
+        
 
     def __read_sensor_state__(self) -> List[int]:
         readings = [0] * len(self.SENSORS)  # 0 or 1
         for i in range(len(self.SENSORS)):
-            readings[i] = int(GPIO.input(self.SENSORS[i]))
+            # average readings to minimize false readings
+            sum = 0
+            for j in range(5):
+                sum += int(GPIO.input(self.SENSORS[i]))
+                sleep(0.01)
+            readings[i] = int(sum / 5 + 0.5)
         return readings
 
     def read_sensors_and_cache(self) -> List[int]:
@@ -39,7 +50,7 @@ class ZisterneHW:
         logger.info("Reading new sensor values.")
         self.__setup__()
         readings = self.__read_sensor_state__()
-        GPIO.cleanup()
+        self.__cleanup__()
         self.cache = readings
         self.cached_time = datetime.now()
         return readings
