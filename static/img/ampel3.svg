@@ -17,10 +17,18 @@
 			<feComposite in="flood" in2="offset" operator="out" result="comp1"/>
 			<feComposite in="comp1" in2="SourceGraphic" operator="in" result="comp2"/>
 		</filter>
-		<linearGradient id="grad-lamp3" x2="0%" y1="100%" y2="0%">
+		<radialGradient id="grad-lamp1" cx="50%" cy="50%" fy="65%" r="145.71428571%" gradientTransform="scale(1.0, 0.9459459459)">
+			<stop offset="30%" stop-color="#f97d00" />
+			<stop offset="100%" stop-color="#f97c0068" />
+		</radialGradient>
+		<radialGradient id="grad-lamp2" cx="50%" cy="105%" fy="130%" r="201.42854857%" gradientTransform="scale(1.0, 0.4964539570)">
+			<stop offset="30%" stop-color="#edb603" />
+			<stop offset="100%" stop-color="#edb60369" />
+		</radialGradient>
+		<radialGradient id="grad-lamp3" cx="50%" cy="145%" fy="160%" r="294.28574286%" gradientTransform="scale(1.0, 0.3398057923)">
 			<stop offset="30%" stop-color="#009ffa" />
-			<stop offset="90%" stop-color="#009efa38" />
-		</linearGradient>
+			<stop offset="100%" stop-color="#009efa50" />
+		</radialGradient>
 	</defs>
 	<g transform="translate(-40.666138,-10)">
 		<rect id="bg" x="40.665859" y="10" width="128.668" height="280" rx="16" ry="16" fill="#999" stroke-width=".60812" style="paint-order:markers fill stroke"/>
@@ -36,8 +44,8 @@
 		<g id="g_lampson" transform="translate(-2.7884668e-4)" clip-path="url(#clipPath2-1)">
 			<g>
 				<rect id="lamp0on" x="60.666138" y="265" width="35" height="10" rx="5" ry="5" fill="#ed2e03" stroke-width=".451004" style="paint-order:markers fill stroke"/>
-				<rect id="lamp1on" x="60.666138" y="225" width="35" height="37" rx="4" ry="4" fill="#f97d00" stroke-width=".974902" style="paint-order:markers fill stroke"/>
-				<rect id="lamp2on" x="60.666138" y="151.5" width="35" height="70.499992" rx="4" ry="4" fill="#edb603" stroke-width="1.34572" style="paint-order:markers fill stroke"/>
+				<rect id="lamp1on" x="60.666138" y="225" width="35" height="37" rx="4" ry="4" fill="url(#grad-lamp1)" stroke-width=".974902" style="paint-order:markers fill stroke"/>
+				<rect id="lamp2on" x="60.666138" y="151.5" width="35" height="70.499992" rx="4" ry="4" fill="url(#grad-lamp2)" stroke-width="1.34572" style="paint-order:markers fill stroke"/>
 				<rect id="lamp3on" x="60.666138" y="45.5" width="35" height="103.00001" rx="4" ry="4" fill="url(#grad-lamp3)" stroke-width="1.37736" style="paint-order:markers fill stroke"/>
 			</g>
 		</g>

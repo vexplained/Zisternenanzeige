@@ -17,10 +17,10 @@
 			<feComposite in="flood" in2="offset" operator="out" result="comp1"/>
 			<feComposite in="comp1" in2="SourceGraphic" operator="in" result="comp2"/>
 		</filter>
-		<linearGradient id="grad-lamp1" x2="0%" y1="100%" y2="0%">
-			<stop offset="10%" stop-color="#f97d00" />
+		<radialGradient id="grad-lamp1" cx="50%" cy="50%" fy="65%" r="125.71428571%" gradientTransform="scale(1.0, 0.9459459459)">
+			<stop offset="30%" stop-color="#f97d00" />
 			<stop offset="100%" stop-color="#f97c0068" />
-		</linearGradient>
+		</radialGradient>
 	</defs>
 	<g transform="translate(-40.666138,-10)">
 		<rect id="bg" x="40.665859" y="10" width="128.668" height="280" rx="16" ry="16" fill="#999" stroke-width=".60812" style="paint-order:markers fill stroke"/>
